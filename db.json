@@ -1,0 +1,49 @@
+{
+  "Cardconfiguration": [
+    {
+      "id": "32",
+      "cardDescription": "Sales",
+      "url": "assets/Sales.json",
+      "icon": "pi-user"
+    },
+    {
+      "id": "56",
+      "cardDescription": "Product",
+      "url": "assets/Product.json",
+      "icon": "pi-camera"
+    }
+  ],
+  "Dashboardconfiguration": [
+    {
+      "DashboardID": "4343",
+      "DashboardDescription": "Saving",
+      "droppedCards": [
+        {
+          "id": "32",
+          "cardDescription": "Sales",
+          "url": "assets/Sales.json",
+          "icon": "pi-user",
+          "row": "2",
+          "part": 1,
+          "partWidth": "100%"
+        },
+        {
+          "id": "32",
+          "cardDescription": "Sales",
+          "url": "assets/Sales.json",
+          "icon": "pi-user",
+          "row": "1",
+          "part": 2,
+          "partWidth": "50%"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "DashboardID": "23",
+      "DashboardDescription": "sales",
+      "droppedCards": [],
+      "id": 2
+    }
+  ]
+}

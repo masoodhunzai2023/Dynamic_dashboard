@@ -1,0 +1,34 @@
+.navbar {
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-toggle {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+}
+
+.navbar-title {
+  font-size: 20px;
+  color: white;
+}
+
+.menubar {
+  background-color: black;
+  display: flex;
+
+}
+
+.menubar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 100px; /* Adjust the distance between the menu items */
+}
+
+
+.menubar a:hover {
+  background-color: #333;
+}

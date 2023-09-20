@@ -1,0 +1,38 @@
+
+  <div class="sidebar-container">
+    <div class="sidebar">
+      <div class="card-container">
+        <div class="card" *ngFor="let item of sidebarCards; let i = index">
+          <div class="card-content">
+            <p>{{ item.cardDescription }}</p>
+          </div>
+          <div class="icon-container">
+            <button class="custom-icon-button" pTooltip="View Details" tooltipPosition="top" (click)="showDetails(item,i)">
+              <i class="pi pi-eye custom-icon"></i>
+            </button>
+            <div class="card-popup" *ngIf="isPopupVisible &&  popupIndex === i">
+              <div class="card-popup-content">
+                <div class="close-button" (click)="hideDetails()">
+                  <i class="pi pi-times"></i>
+                </div>
+                <div class="card-details">
+                  <div class="custom-icon-circle">
+                    <i [ngClass]="'pi ' + icon"></i>
+                  </div>
+                  <div class="description-container">
+                    <p class="card-description">{{ cardValueDescription }}</p>
+                    <p class="card-value">{{ cardValue }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="isSideBarPath()">
+      <app-normal-cards></app-normal-cards>
+    </ng-container>
+   
+  </div>
+  <router-outlet></router-outlet>  

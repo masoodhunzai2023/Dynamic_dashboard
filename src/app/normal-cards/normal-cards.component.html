@@ -1,0 +1,40 @@
+<div>
+    <p-button label="Add Card" icon="pi pi-plus" class="add-card-button" (click)="toggleOptions()"></p-button>
+    <p-listbox    *ngIf="showOptions" [options]="menuItems" (click)="handleOptionClick($event)"></p-listbox> 
+  </div>
+<div *ngIf="showForm" class=".centered-card">
+    <p-card  class="centered-card">
+      <form [formGroup]="AddCard" (ngSubmit)="submitCard()" class="horizontal-form">
+        <div class="form-row">
+          <label>Card ID: </label>
+          <input  type="text" pInputText name="ID" (change)="duplicateID($event)" formControlName="id" class="p-inputtext p-component">
+        </div>
+        <span class="error" *ngIf="id && id.invalid && id.touched">*Field is required<br></span>
+        <span class="error" *ngIf="duplicate == true">*ID already exits <br /></span>
+        <br />
+        <div class="form-row">
+          <label>Card Description:</label>
+          <input  type="text" pInputText name="cardDescription" formControlName="cardDescription" class="p-inputtext p-component">
+        </div>
+        <span class="error" *ngIf="cardDescription && cardDescription.invalid && cardDescription.touched">*Field is required<br><br></span>
+        <div class="form-row">
+          <label>Url:</label>
+          <input type="text" pInputText name="url" formControlName="url" class="p-inputtext p-component">
+        </div>
+        <span class="error" *ngIf="url && url.invalid && url.touched">*Field is required<br><br></span>
+        <div class="form-row">
+          <label>Icon:</label>
+          <p-dropdown [options]="iconOptions" formControlName="icon" [showClear]="true">
+            <ng-template let-option pTemplate="option">
+              <i class="pi" [ngClass]="option.value"></i>
+              <span>{{ option.label }}</span>
+            </ng-template>
+          </p-dropdown>
+        </div>
+        <span class="error" *ngIf="icon && icon.invalid && icon.touched">*Field is required<br><br></span>
+        <div class="p-field custom-margin-top">
+          <button type="submit" [disabled]="AddCard.invalid"pButton class="p-button p-component p-button-primary text-center" >Add</button>
+        </div>
+      </form>
+    </p-card>
+  </div>
